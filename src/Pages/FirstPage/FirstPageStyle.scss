@@ -1,0 +1,36 @@
+@import '../../Assets/Lib/breakpoints.scss';
+
+.CardsContainer
+{
+  display: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  @include media('>=tablet')
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10%;
+    width: 60%;
+    height: 70%;
+  }
+}
+
+.CardsContainerMobile
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 30%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  &__Arrow
+  {
+    width: 10%;
+  }
+  @include media('>=tablet')
+  {
+    display: none;
+  }
+}
