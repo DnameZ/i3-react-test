@@ -14,11 +14,11 @@ const Paginations = ({perPage,AllOfThem,curPage}) => {
   {
     if(myPage==curPage)
     {
-      return "myli"
+      return "Active"
     }
     else
     {
-      return "yoursli"
+      return "Deactive"
     }
 
   }
@@ -26,7 +26,7 @@ const Paginations = ({perPage,AllOfThem,curPage}) => {
   
   return ( 
     <div className="ContainerForPagination">
-      <ul className="pagination">
+      <ul className="ContainerForPagination__pagination">
         {SumPage.map((page)=>(
           <li key={page} className={DetermineActiveState(page)} >
             {page}
