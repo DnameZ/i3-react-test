@@ -1,11 +1,15 @@
 import React from 'react';
 import './Nav.scss';
 
+import { useNavigate } from 'react-router-dom';
+
 const Navigation = () => {
+
+  const navigate = useNavigate();
   return ( 
     <nav>
-      <a>First Page</a>
-      <a>Second Page</a>
+      <a onClick={()=>navigate("/first")}>First Page</a>
+      <a onClick={()=>navigate("/second")}>Second Page</a>
       <a>Some Page</a>
       <a>Some Page</a>
       <a>Some Page</a>

@@ -1,15 +1,16 @@
 import React from 'react';
 import './DropDownStyle.scss';
 
-
+import { useNavigate } from 'react-router-dom';
 const DrowDown = () => {
+    const navigate = useNavigate();
   return ( 
     <ul class="dropdown">
         <li><a href="#">2020 Anual Report</a>
             <ul>
                 <li><a href="#">Anual Report Home</a></li>
-                <li><a href="#">Page One</a></li>
-                <li><a href="#">Page Two</a></li>
+                <li onClick={()=>navigate("/first")}><a href="#">Page One</a></li>
+                <li onClick={()=>navigate("/second")}><a href="#">Page Two</a></li>
             </ul>
         </li>
     </ul>

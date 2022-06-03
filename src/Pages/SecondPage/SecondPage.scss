@@ -1,0 +1,129 @@
+@import '../../Assets/Lib/breakpoints.scss';
+
+.Content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: flex-end;
+  width: 100%;
+  height: 85%;
+  padding-left: 20px;
+  padding-right:20px;
+
+  @include media('>=tablet')
+  {
+    padding-left: 0px;
+    align-self: flex-start;
+    align-items: flex-start;
+    width: 50%;
+    height: 78%;
+  }
+
+  @include media('>=desktop')
+  {
+    padding-left: 0px;
+    align-self: flex-start;
+    align-items: flex-start;
+    width: 30%;
+    height: 100%;
+  }
+
+  &__PictureContainer
+  {
+    display: block;
+    width: 80%;
+    height: 40%;
+    margin-bottom: 20px;
+
+    @include media('>=tablet')
+    {
+      display: none;
+    }
+
+    &_Picture
+    {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__Title
+  {
+    color : rgba(14, 70, 252, 0.829);
+    margin-bottom: 60px;
+
+    @include media('>=tablet')
+    {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__PictureFormat
+  {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 70%;
+
+
+    &_Pictures
+    {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      height: 50%;
+
+      @include media('>=tablet')
+      {
+        justify-content: center;
+        align-items: flex-start;
+        height: 50%;
+      }
+      
+    }
+
+    &_Content
+    {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      justify-content: space-between;
+      width: 100%;
+      height: 50%;
+
+      @include media('>=tablet')
+      {
+        align-items: center;
+        gap: 0px;
+        width: 100%;
+        height: 10%;
+      }
+
+      @include media('>=desktop')
+      {
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+        height: 50%;
+      }
+
+      
+    }
+
+  }
+
+  &__PictureFormatBig
+  {
+    display: none;
+
+  @include media('>=tablet')
+  {
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height:100%;
+  }
+  }
+}

@@ -4,15 +4,28 @@
 {
   display: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
+  border-radius: 20px;
+  
   @include media('>=tablet')
   {
+    padding: 0;
+    align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:10%;
-    width: 60%;
-    height: 70%;
+    width: 90%;
+    height: 50%;
+  }
+
+  @include media('>=desktop')
+  {
+    padding: 0;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
   }
 }
 
@@ -22,7 +35,8 @@
   justify-content: space-around;
   align-items: center;
   width: 80%;
-  height: 30%;
+  height: 40%;
+  border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   &__Arrow

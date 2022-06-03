@@ -4,12 +4,26 @@ nav {
 	  display: none;
 		@include media('>=tablet')
 		{
+			position: absolute;
 			display: block;
 			margin: 27px auto 0;
-			position: relative;
+			width: 90%;
+			height: 50px;
+			background-color: #ffffff;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+			border-radius: 8px;
+			font-size: 0;
+		}
+
+		@include media('>=desktop')
+		{
+			position: absolute;
+			display: block;
+			margin: 27px auto 0;
 			width: 50%;
 			height: 50px;
-			background-color: #34495e;
+			background-color: #ffffff;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 			border-radius: 8px;
 			font-size: 0;
 		}
@@ -24,7 +38,7 @@ nav a {
 	position: relative;
 	z-index: 1;
 	text-decoration: none;
-	color: white;
+	color: rgb(0, 0, 0);
 	cursor: pointer;
 }
 nav .animation {
