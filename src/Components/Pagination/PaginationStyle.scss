@@ -2,7 +2,7 @@
 @import '../../Assets/Lib/breakpoints.scss';
 
 
-.ContainerForPagination {
+.containerForPagination {
   display: flex;
   width: 70%;
   justify-content: center;
@@ -23,23 +23,23 @@
     align-self: flex-end;
     width: 100%;
     list-style: none;
+
+    &__page--acitve
+    {
+      flex: 1;
+      margin: 0px 5px;
+      background: #2c80ff;
+      color: #2c80ff;
+      border-radius: 3px;
+    }
+  
+
+    &__page--dacitve
+    {
+      flex: 1;
+      margin: 0px 5px;
+      background: #dde1e7;
+      border-radius: 3px;
+    }
   }
-}
-
-.Active
-{
-  flex: 1;
-  margin: 0px 5px;
-  background: #2c80ff;
-  color: #2c80ff;
-  border-radius: 3px;
-
-}
-
-.Deactive
-{
-  flex: 1;
-  margin: 0px 5px;
-  background: #dde1e7;
-  border-radius: 3px;
 }

@@ -39,11 +39,9 @@ export const ImageScrollAnimation = ({src}) => {
   }, []);
 
   return (
-    <>
       <div ref={elemRef} style={{ overflow: "hidden" }}>
         <img src = {src} style={style}/>
       </div>
-    </>
   );
 };
 

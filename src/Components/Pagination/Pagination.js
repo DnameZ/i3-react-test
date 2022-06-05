@@ -14,19 +14,20 @@ const Paginations = ({perPage,AllOfThem,curPage}) => {
   {
     if(myPage==curPage)
     {
-      return "Active"
+      
+      return "containerForPagination__pagination__page--acitve"
     }
     else
     {
-      return "Deactive"
+      return "containerForPagination__pagination__page--dacitve"
     }
 
   }
 
   
   return ( 
-    <div className="ContainerForPagination">
-      <ul className="ContainerForPagination__pagination">
+    <div className="containerForPagination">
+      <ul className="containerForPagination__pagination">
         {SumPage.map((page)=>(
           <li key={page} className={DetermineActiveState(page)} >
             {page}

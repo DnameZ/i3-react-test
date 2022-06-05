@@ -2,15 +2,19 @@ import React from 'react';
 import './DropDownStyle.scss';
 
 import { useNavigate } from 'react-router-dom';
-const DrowDown = () => {
+
+import { NavMobile } from '../../MockFolder/NavText';
+
+const DrowDown = ({curpage}) => {
     const navigate = useNavigate();
+
   return ( 
     <ul class="dropdown">
-        <li><a href="#">2020 Anual Report</a>
+        <li><a href="#">{curpage}</a>
             <ul>
-                <li><a href="#">Anual Report Home</a></li>
-                <li onClick={()=>navigate("/first")}><a href="#">Page One</a></li>
-                <li onClick={()=>navigate("/second")}><a href="#">Page Two</a></li>
+                <li onClick={()=>navigate("/")}><a href="#">{NavMobile.NavLinks.AnnualReport}</a></li>
+                <li onClick={()=>navigate("/first")}><a href="#">{NavMobile.NavLinks.NavOne}</a></li>
+                <li onClick={()=>navigate("/second")}><a href="#">{NavMobile.NavLinks.NavTwo}</a></li>
             </ul>
         </li>
     </ul>

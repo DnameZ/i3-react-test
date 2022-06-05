@@ -13,21 +13,34 @@ import { Images } from '../../Assets/Lib/generalStyles';
 
 const FirstPage = () => {
   let [page,setPage] = useState(1);
-  const [percentsPerPage] = useState(1);
+  
+  const percentsPerPage = 1;
 
   const indexLastPercent = page * percentsPerPage;
   const indexFirstPercent = indexLastPercent - percentsPerPage;
   const currentPercent = AllPercents.Percents.slice(indexFirstPercent,indexLastPercent);
 
+
+  const Operations = {
+    Plus:"+",
+    Minus:"-"
+  }
+
   const ChangePage = (operation)=>
   {
       switch (operation) {
-        case "+":
-          setPage(page+=1);
+        case Operations.Plus:
+          if(page <= AllPercents.Percents.length-1)
+           setPage(page+=1);
+          else
+            window.alert("No more items")     
         break;
 
-        case "-":
-          setPage(page-1);
+        case Operations.Minus:
+          if(page >= 2)
+            setPage(page-1);
+          else
+            window.alert("No more items")
         break;
 
         default:
@@ -41,23 +54,22 @@ const FirstPage = () => {
 
   return ( 
       <>
-        <DrowDown/>
+        <DrowDown curpage="Page One"/>
         <Navigation/>
-          <div className = 'CardsContainer'>
-            <Card percent={"+ %3"} title="Organic Sales Growth" />
-            <Card percent={"+ %13"} title="Core eps growth" />
-            <Card percent={"+ %114"} title="Third One" />
+          <div className = 'cardscontainer'>
+            {AllPercents.Percents.map((percent)=>
+              <SoftComponent key={percent} percent={percent.content} title={percent.Title} />
+            )}
           </div>
 
-          <div className = 'CardsContainerMobile'>
-            <img onClick={ ()=>ChangePage("-") } src={Images.ArrowL} className = 'CardsContainerMobile__Arrow' />
+          <div className = 'cardscontainermobile'>
+            <img onClick={ ()=>ChangePage("-") } src={Images.ArrowL} className = 'cardscontainermobile__arrow' />
               {currentPercent.map((percent)=> 
                 <SoftComponent key={percent} percent={percent.content} title={percent.Title} />
               )}   
-            <img onClick={ ()=>ChangePage("+")} src={Images.ArrowR} className = 'CardsContainerMobile__Arrow' />
+            <img onClick={ ()=>ChangePage("+")} src={Images.ArrowR} className = 'cardscontainermobile__arrow' />
         </div>
-        <Paginations perPage={percentsPerPage} AllOfThem ={ AllPercents.Percents.length } curPage={page} />
-        
+        <Paginations perPage={percentsPerPage} AllOfThem ={ AllPercents.Percents.length } curPage={page} />       
       </>
    );
 }

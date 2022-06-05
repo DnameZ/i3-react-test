@@ -4,12 +4,12 @@ import './Card.scss';
 
 const Card = ({percent,title}) => {
   return ( 
-    <div className='Content'>
-      <div className="Content__Card">
-        <img className="Content__Card__img"/>
-        <p className="Content__Card__content" >{percent}</p>
+    <div className='content'>
+      <div className=" content__card ">
+        <img className= "card__img"/>
+        <p className=" content__card__content " >{percent}</p>
       </div>
-      <p className="Content__title">{title}</p> 
+      <p className=" content__title ">{title}</p> 
     </div>
    );
 }
